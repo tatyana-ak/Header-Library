@@ -16,7 +16,7 @@ class ClientError
      */
     public static function badRequest()
     {
-        header('HTTP/1.1 400 Bad Request', true, 400);
+        header('HTTP/1.1 ' . Constants::$headersArr[400]['header'], true, 400);
         exit;
     }
 
@@ -28,7 +28,7 @@ class ClientError
      */
     public static function unauthorized()
     {
-        header('HTTP/1.1 401 Unauthorized', true, 401);
+        header('HTTP/1.1 ' . Constants::$headersArr[401]['header'], true, 401);
         exit;
     }
 
@@ -40,7 +40,7 @@ class ClientError
      */
     public static function paymentRequired()
     {
-        header('HTTP/1.1 402 Payment Required', true, 402);
+        header('HTTP/1.1 ' . Constants::$headersArr[402]['header'], true, 402);
         exit;
     }
 
@@ -51,7 +51,7 @@ class ClientError
      */
     public static function forbidden()
     {
-        header('HTTP/1.1 403 Forbidden', true, 403);
+        header('HTTP/1.1 ' . Constants::$headersArr[403]['header'], true, 403);
         exit;
     }
 
@@ -63,7 +63,7 @@ class ClientError
      */
     public static function notFound()
     {
-        header('HTTP/1.1 404 Not Found', true, 404);
+        header('HTTP/1.1 ' . Constants::$headersArr[404]['header'], true, 404);
         exit;
     }
 
@@ -76,7 +76,7 @@ class ClientError
      */
     public static function methodNotAllowed($allowMethods)
     {
-        header('HTTP/1.1 405 Method Not Allowed', true, 405);
+        header('HTTP/1.1 ' . Constants::$headersArr[405]['header'], true, 405);
         header('Allow:' . implode(',', $allowMethods));
         exit;
     }
@@ -89,7 +89,7 @@ class ClientError
      */
     public static function notAcceptable()
     {
-        header('HTTP/1.1 406 Not Acceptable', true, 406);
+        header('HTTP/1.1 ' . Constants::$headersArr[406]['header'], true, 406);
         exit;
     }
 
@@ -100,7 +100,7 @@ class ClientError
      */
     public static function proxyAuthenticationRequired()
     {
-        header('HTTP/1.1 407 Proxy Authentication Required', true, 407);
+        header('HTTP/1.1 ' . Constants::$headersArr[407]['header'], true, 407);
         exit;
     }
 
@@ -111,7 +111,7 @@ class ClientError
      */
     public static function RequestTimeout()
     {
-        header('HTTP/1.1 408 Request Timeout', true, 408);
+        header('HTTP/1.1 ' . Constants::$headersArr[408]['header'], true, 408);
         exit;
     }
 
@@ -122,7 +122,7 @@ class ClientError
      */
     public static function conflict()
     {
-        header('HTTP/1.1 409 Conflict', true, 409);
+        header('HTTP/1.1 ' . Constants::$headersArr[409]['header'], true, 409);
         exit;
     }
 
@@ -133,7 +133,7 @@ class ClientError
      */
     public static function gone()
     {
-        header('HTTP/1.1 410 Gone', true, 410);
+        header('HTTP/1.1 ' . Constants::$headersArr[410]['header'], true, 410);
         exit;
     }
 
@@ -146,7 +146,7 @@ class ClientError
      */
     public static function lengthRequired($contentLength)
     {
-        header('HTTP/1.1 411 Length Required', true, 411);
+        header('HTTP/1.1 ' . Constants::$headersArr[411]['header'], true, 411);
         header('Content-Length:' . $contentLength);
         exit;
     }
@@ -158,7 +158,7 @@ class ClientError
      */
     public static function preconditionFailed()
     {
-        header('HTTP/1.1 412 Precondition Failed', true, 412);
+        header('HTTP/1.1 ' . Constants::$headersArr[412]['header'], true, 412);
         exit;
     }
 
@@ -171,7 +171,7 @@ class ClientError
      */
     public static function requestEntityTooLarge($retryAfter = '')
     {
-        header('HTTP/1.1 413 Request Entity Too Large', true, 413);
+        header('HTTP/1.1 ' . Constants::$headersArr[413]['headre'], true, 413);
 
         if(!empty($retryAfter)) {
             header('Retry-After: ' . $retryAfter);
@@ -186,7 +186,7 @@ class ClientError
      */
     public static function requestUriTooLong()
     {
-        header('HTTP/1.1 414 Request-URI Too Long', true, 414);
+        header('HTTP/1.1 ' . Constants::$headersArr[414]['header'], true, 414);
         exit;
     }
 
@@ -197,7 +197,7 @@ class ClientError
      */
     public static function unsupportedMediaType()
     {
-        header('HTTP/1.1 415 Unsupported Media Type', true, 415);
+        header('HTTP/1.1 ' . Constants::$headersArr[415]['header'], true, 415);
         exit;
     }
 
@@ -208,7 +208,7 @@ class ClientError
      */
     public static function requestedRangeNotSatisfiable()
     {
-        header('HTTP/1.1 416 Requested Range Not Satisfiable', true, 416);
+        header('HTTP/1.1 ' . Constants::$headersArr[416]['header'], true, 416);
         exit;
     }
 
@@ -219,7 +219,7 @@ class ClientError
      */
     public static function expectationFailed()
     {
-        header('HTTP/1.1 417 Expectation Failed', true, 417);
+        header('HTTP/1.1 ' . Constants::$headersArr[417]['header'], true, 417);
         exit;
     }
 
@@ -230,7 +230,7 @@ class ClientError
      */
     public static function unprocessableEntity()
     {
-        header('HTTP/1.1 422 Unprocessable Entity', true, 422);
+        header('HTTP/1.1 ' . Constants::$headersArr[422]['header'], true, 422);
         exit;
     }
 
@@ -241,7 +241,7 @@ class ClientError
      */
     public static function locked()
     {
-        header('HTTP/1.1 423 Locked', true, 423);
+        header('HTTP/1.1 ' . Constants::$headersArr[423]['header'], true, 423);
         exit;
     }
 
@@ -252,7 +252,7 @@ class ClientError
      */
     public static function failedDependency()
     {
-        header('HTTP/1.1 424 Failed Dependency', true, 424);
+        header('HTTP/1.1 ' . Constants::$headersArr[424]['header'], true, 424);
         exit;
     }
 
@@ -264,7 +264,7 @@ class ClientError
      */
     public static function unorderedCollection()
     {
-        header('HTTP/1.1 425 Unordered Collection', true, 425);
+        header('HTTP/1.1 ' . Constants::$headersArr[425]['header'], true, 425);
         exit;
     }
 
@@ -276,7 +276,7 @@ class ClientError
      */
     public static function upgradeRequired()
     {
-        header('HTTP/1.1 426 Upgrade Required', true, 426);
+        header('HTTP/1.1 ' . Constants::$headersArr[426]['header'], true, 426);
         exit;
     }
 
@@ -290,7 +290,7 @@ class ClientError
      */
     public static function preconditionRequired()
     {
-        header('HTTP/1.1 428 Precondition Required', true, 428);
+        header('HTTP/1.1 ' . Constants::$headersArr[428]['header'], true, 428);
         exit;
     }
 
@@ -302,7 +302,7 @@ class ClientError
      */
     public static function tooManyRequests()
     {
-        header('HTTP/1.1 429 Too Many Requests', true, 429);
+        header('HTTP/1.1 ' . Constants::$headersArr[429]['header'], true, 429);
         exit;
     }
 
@@ -314,7 +314,7 @@ class ClientError
      */
     public static function requestHeaderFieldsTooLarge()
     {
-        header('HTTP/1.1 431 Request Header Fields Too Large', true, 431);
+        header('HTTP/1.1 ' . Constants::$headersArr[431]['header'], true, 431);
         exit;
     }
 
@@ -326,7 +326,7 @@ class ClientError
      */
     public static function requestThrashed()
     {
-        header('HTTP/1.1 432 Request Thrashed', true, 432);
+        header('HTTP/1.1 ' . Constants::$headersArr[432]['header'], true, 432);
         exit;
     }
 
@@ -338,7 +338,7 @@ class ClientError
      */
     public static function noResponse()
     {
-        header('HTTP/1.1 444 No Response', true, 444);
+        header('HTTP/1.1 ' . Constants::$headersArr[444]['header'], true, 444);
         exit;
     }
 
@@ -349,7 +349,7 @@ class ClientError
      */
     public static function retryWith()
     {
-        header('HTTP/1.1 449 Retry With', true, 449);
+        header('HTTP/1.1 ' . Constants::$headersArr[449]['header'], true, 449);
         exit;
     }
 
@@ -358,7 +358,7 @@ class ClientError
      */
     public static function unrecoverableError()
     {
-        header('HTTP/1.1 456 Unrecoverable Error', true, 456);
+        header('HTTP/1.1 ' . Constants::$headersArr[456]['header'], true, 456);
         exit;
     }
 }

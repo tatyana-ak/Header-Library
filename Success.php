@@ -19,7 +19,7 @@ class Success extends Constants
      */
     public static function ok()
     {
-        header('HTTP/1.1 200 OK', true, 200);
+        header('HTTP/1.1 ' . Constants::$headersArr[200]['header'], true, 200);
         exit;
     }
 
@@ -33,7 +33,7 @@ class Success extends Constants
      */
     public static function created($location, $contentType = self::TYPE_JSON)
     {
-        header('HTTP/1.1 201 Created', true, 201);
+        header('HTTP/1.1 ' . Constants::$headersArr[201]['header'], true, 201);
         header('Content-Location:' . $location);
         header('Content-Type:' . $contentType);
         exit;
@@ -48,7 +48,7 @@ class Success extends Constants
      */
     public static function accepted()
     {
-        header('HTTP/1.1 203 Accepted', true, 203);
+        header('HTTP/1.1 ' . Constants::$headersArr[203]['header'], true, 203);
         exit;
     }
 
@@ -59,7 +59,7 @@ class Success extends Constants
      */
     public static function notAuthoritativeInfo()
     {
-        header('HTTP/1.1 203 Non-Authoritative Information', true, 203);
+        header('HTTP/1.1 ' . Constants::$headersArr[203]['header'], true, 203);
         exit;
     }
 
@@ -70,7 +70,7 @@ class Success extends Constants
      */
     public static function noContent()
     {
-        header('HTTP/1.1 204 No Content', true, 204);
+        header('HTTP/1.1 ' . Constants::$headersArr[204]['header'], true, 204);
         exit;
     }
 
@@ -82,7 +82,7 @@ class Success extends Constants
      */
     public static function resetContent()
     {
-        header('HTTP/1.1 Reset Content', true, 205);
+        header('HTTP/1.1 ' . Constants::$headersArr[205]['header'], true, 205);
         exit;
     }
 
@@ -97,7 +97,7 @@ class Success extends Constants
      */
     public static function partialContent($contentRange)
     {
-        header('HTTP/1.1 206 Partial Content', true, 206);
+        header('HTTP/1.1 ' . Constants::$headersArr[206]['header'], true, 206);
         header('Content-Range:' . $contentRange);
         exit;
     }
@@ -110,7 +110,7 @@ class Success extends Constants
      */
     public static function multiStatus()
     {
-        header('HTTP/1.1 207 Multi-Status', true, 207);
+        header('HTTP/1.1 ' . Constants::$headersArr[207]['header'], true, 207);
         exit;
     }
 
@@ -123,7 +123,7 @@ class Success extends Constants
      */
     public static function IMUsed()
     {
-        header('HTTP/1.1 226 IM Used', true, 226);
+        header('HTTP/1.1 ' . Constants::$headersArr[226]['header'], true, 226);
         exit;
     }
 }

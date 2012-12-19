@@ -17,7 +17,7 @@ class Redirection
      */
     public static function multipleChoices()
     {
-        header('HTTP/1.1 300 Multiple Choices', true, 300);
+        header('HTTP/1.1 ' . Constants::$headersArr[300]['header'], true, 300);
         exit;
     }
 
@@ -30,7 +30,7 @@ class Redirection
      */
     public static function movedPermanently($location)
     {
-        header('HTTP/1.1 301 Moved Permanently', true, 301);
+        header('HTTP/1.1 ' . Constants::$headersArr[301]['header'], true, 301);
         header('Content-Location:' . $location);
         exit;
     }
@@ -66,7 +66,7 @@ class Redirection
      */
     public static function found($location)
     {
-        header('HTTP/1.1 302 Found', true, 302);
+        header('HTTP/1.1 ' . Constants::$headersArr[302]['header'], true, 302);
         header('Content-Location:' . $location);
         exit;
     }
@@ -83,7 +83,7 @@ class Redirection
      */
     public static function seeOther($location)
     {
-        header('HTTP/1.1 303 See Other', true, 303);
+        header('HTTP/1.1 ' . Constants::$headersArr[303]['header'], true, 303);
         header('Content-Location:' . $location);
         exit;
     }
@@ -95,7 +95,7 @@ class Redirection
      */
     public static function notModified()
     {
-        header('HTTP/1.1 304 Not Modifier', true, 304);
+        header('HTTP/1.1 ' . Constants::$headersArr[304]['header'], true, 304);
         exit;
     }
 
@@ -109,7 +109,7 @@ class Redirection
      */
     public static function useProxy($location)
     {
-        header('HTTP/1.1 305 Use Proxy', true, 305);
+        header('HTTP/1.1 ' . Constants::$headersArr[305]['header'], true, 305);
         header('Content-Location:' . $location);
         exit;
     }
@@ -124,7 +124,7 @@ class Redirection
      */
     public static function temporaryRedirect($location)
     {
-        header('HTTP/1.1 307 Temporary Redirect', true, 307);
+        header('HTTP/1.1 ' . Constants::$headersArr[307]['header'], true, 307);
         header('Content-Location:' . $location);
         exit;
     }

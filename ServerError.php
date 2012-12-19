@@ -16,7 +16,7 @@ class ServerError
      */
     public static function InternalServerError()
     {
-        header('HTTP/1.1 500 Internal Server Error', true, 500);
+        header('HTTP/1.1 ' . Constants::$headersArr[500]['header'], true, 500);
         exit;
     }
 
@@ -27,7 +27,7 @@ class ServerError
      */
     public static function notImplemented()
     {
-        header('HTTP/1.1 501 Not Implemented', true, 501);
+        header('HTTP/1.1 ' . Constants::$headersArr[501]['header'], true, 501);
         exit;
     }
 
@@ -38,7 +38,7 @@ class ServerError
      */
     public static function badGateway()
     {
-        header('HTTP/1.1 502 Bad Gateway', true, 502);
+        header('HTTP/1.1 ' . Constants::$headersArr[502]['header'], true, 502);
         exit;
     }
 
@@ -52,7 +52,7 @@ class ServerError
      */
     public static function serviceUnavailable($retryAfter = '')
     {
-        header('HTTP/1.1 503 Service Unavailable', true, 503);
+        header('HTTP/1.1 ' . Constants::$headersArr[503]['header'], true, 503);
 
         if(!empty($retryAfter)) {
             header('retry-After: ' . $retryAfter);
@@ -67,13 +67,13 @@ class ServerError
      */
     public static function gatewayTimeout()
     {
-        header('HTTP/1.1 504 Gateway Timeout', true, 504);
+        header('HTTP/1.1 ' . Constants::$headersArr[504]['header'], true, 504);
         exit;
     }
 
     public static function HTTPVersionNotSupported()
     {
-        header('HTTP/1.1 505 HTTP Version Supported', true, 505);
+        header('HTTP/1.1 ' . Constants::$headersArr[505]['header'], true, 505);
         exit;
     }
 
@@ -84,7 +84,7 @@ class ServerError
      */
     public static function variantAlsoNegotiates()
     {
-        header('HTTP/1.1 506 Variant Also Negotiates', true, 506);
+        header('HTTP/1.1 ' . Constants::$headersArr[506]['header'], true, 506);
         exit;
     }
 
@@ -95,7 +95,7 @@ class ServerError
      */
     public static function insufficientStorage()
     {
-        header('HTTP/1.1 507 Insufficient Storage', true, 507);
+        header('HTTP/1.1 ' . Constants::$headersArr[507]['header'], true, 507);
         exit;
     }
 
@@ -106,7 +106,7 @@ class ServerError
      */
     public static function loopDetected()
     {
-        header('HTTP/1.1 508 Loop Detected', true, 508);
+        header('HTTP/1.1 ' . Constants::$headersArr[508]['header'], true, 508);
         exit;
     }
 
@@ -117,7 +117,7 @@ class ServerError
      */
     public static function bandwidthLimitExceeded()
     {
-        header('HTTP/1.1 509 Bandwidth Limit Exceeded', true, 509);
+        header('HTTP/1.1 ' . Constants::$headersArr[509]['header'], true, 509);
         exit;
     }
 
@@ -128,7 +128,7 @@ class ServerError
      */
     public static function notExtended()
     {
-        header('HTTP/1.1 510 Not Extended', true, 510);
+        header('HTTP/1.1 ' . Constants::$headersArr[510]['header'], true, 510);
         exit;
     }
 
